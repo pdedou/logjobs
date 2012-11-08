@@ -1,0 +1,28 @@
+.sf-menu {margin:0;}
+.sf-menu ul {position:absolute; display:none;z-index:8}
+.sf-menu li {position:relative; float:left;}
+.sf-menu a { font-family: Arial, Helvetica, sans-serif; text-decoration:none}
+.sf-menu li:hover ul,.sf-menu li.sfHover ul {z-index:105}
+ul.sf-menu li:hover li ul,ul.sf-menu li.sfHover li ul {top:-999px; display:none;}
+ul.sf-menu li li:hover ul,ul.sf-menu li li.sfHover ul {left:100%; top:0px;}
+
+ul.sf-menu>li {padding:64px 19px 0}
+ul.sf-menu>li.last {padding-right:0px}
+ul.sf-menu>li>a {font-size:12px; line-height:20px; color:#3b3535;display:inline-block; font-weight:600; font-family: 'Open Sans', sans-serif; text-transform:uppercase}
+ul.sf-menu>li.current {background:url(../images/top-item.png) no-repeat center top;}
+ul.sf-menu>li.current>a, ul.sf-menu>li.sfHover>a, ul.sf-menu>li>a:hover {color:#bdb6b5;}
+.sf-menu>li>ul ul, .sf-menu>li>ul { width:131px;  top:93px; left:0;display:block; background:url(../images/ul-bg.png) repeat-x left top #2d2929; padding:22px 0;}
+.sf-menu>li>ul>li a {color:#FFF; display:block; line-height:20px; font-size:11px; text-transform:uppercase;text-align:center;padding:5px 0}
+.sf-menu>li>ul>li {display:block; float:none; text-align:center; }
+.sf-menu>li>ul ul {background:url(../images/ul-bg-2.png) repeat-x left top #a5a29f; left:132px !important; top:-22px !important}
+
+
+
+ul.sf-menu>li.current li li, ul.sf-menu>li li.sfHover li { float:none; display:block; float:none; text-align:center;}
+ul.sf-menu>li.current li li a, ul.sf-menu>li li.sfHover li a{display:block;}
+ul.sf-menu>li li.sfHover, .sf-menu>li>ul>li:hover, ul.sf-menu>li>ul>li.sfHover:hover,ul.sf-menu>li li.sfHover li:hover {background:url(../images/li-bg.png) repeat-x left top #ff922e;}
+ul.sf-menu>li li.sfHover a, .sf-menu>li>ul>li a:hover, ul.sf-menu>li>ul>li.sfHover a:hover,ul.sf-menu>li li.sfHover li a:hover {color:#FFF;padding:5px 0;}
+ul.sf-menu>li li.sfHover li a {text-decoration:none}
+
+ul li .sf-sub-indicator {display:block; width:7px; height:5px; margin:8px 0 0 5px; background:url(../images/indicator.png) no-repeat;float:right}
+ul li li .sf-sub-indicator {display:none}

@@ -1,0 +1,112 @@
+************************************************************************
+CDU004 - Concorrer Vaga
+************************************************************************
+
+Atores
+========================================================================
+Usuário cadastrado LogJobs FREE, usuário cadastrado LogJobs VIP
+
+
+Pré-condições
+========================================================================
+Acesso ao site LogJobs.
+Acesso ao botão "Concorrer a vaga" a partir de um anúncio de vaga
+Usuário autenticado como FREE ou PREMIUM
+
+
+Pós-condições
+========================================================================
+Realização de associação entre um usuário FREE ou PREMIUM para uma determinada vaga
+Envio de e-mail para a empresa responsável, contendo o curriculum do candidato que concorreu a vaga
+
+
+Variações Tecnológicas
+========================================================================
+A empresa ser notificada via SMS da concorrência de um candidato para a vaga?
+No painel de controle aparecer em tempo real que um determinado candidato está concorrendo a uma determinada vaga?
+
+
+
+Questões em aberto
+========================================================================
+Para o usuário PREMIUM será oferecido estatísticas de contratação para a empresa?
+Para o usuário PREMIUM será oferecido um painel indicando a relação Candidato / Vaga para a oportunidade escolhida?
+Para o usuário PREMIUM será oferecido uma análise eletrônica das competências existentes X exigidas para a vaga anunciada?
+
+
+Fluxo Principal
+========================================================================
+
+1. O usuário autenticado (FREE ou PREMIUM) clica no botão de "Concorrer a Vaga", a partir dos seguintes pontos no site
+
+	1.1. Através do resultado de pesquisa por palavra-chave e refinamento
+
+	1.2. Através da tela de detalhes da vaga pesquisada / selecionada
+
+	1.3. Através de um link de e-mail
+
+	1.4. Após a conclusão do fluxo de cadastro, FREE ou PREMIUM, desde que respeitada as limitações nos requisitos
+
+2. O site irá verificar as seguintes regras de negócio
+
+	2.1 Caso a empresa tenha bloqueado o acesso para o usuário autenticado em questão, será apresentada a seguinte mensagem "Esta vaga não está mais disponível para participação em processo seletivo. Aguarde novas oportunidades."
+
+
+	2.2. Caso o usuário seja FREE
+
+
+		2.2.1. Caso a vaga em questão seja do tipo PREMIUM, será apresentada a mensagem "Esta vaga está disponível somente para usuários PREMIUM. Deseja tornar-se usuário PREMIUM e concorrer a esta vaga?"
+
+			2.2.1.1. Caso positivo, será acionado o caso de uso "CDU011 - Contratar Plano PREMIUM"
+
+			2.2.1.2. Caso negativo, o site não irá permitir o envio do curriculum de um candidato FREE para uma vaga PREMIUM
+
+		2.2.2. Caso a vaga em questão seja do tipo FREE e o candidato não tiver enviado curriculum ainda, o site irá enviar por e-mail os dados do curriculum do candidato e gerar uma associação entre o usuário e a vaga apresentada.
+
+		2.2.3. Caso a vaga em questão seja do tipo FREE e o candidato já tiver enviado curriculum, o site irá verificar as seguintes regras de negócio
+
+			2.2.3.1. Caso a diferença entre a data do ultimo envio do curriculum for menor que 2 dias, o site irá mostrar a seguinte mensagem: "Curriculum foi enviado no dia DD/MM/YYYY e está em processo de análise. Um novo envio de curriculum será permitido a partir do dia DD/MM/YYYY"
+
+			2.2.3.2. Caso a quantidade de envio de curriculum tenha atingido a quantidade de 3X, o site irá mostrar a seguinte mensagem "Quantidade máxima de 3 envios já foi atingida. Por favor, aguarde retorno da empresa contratante."
+
+	2.3. Caso o usuário seja PREMIUM
+
+		2.3.1. Caso a vaga em questão seja do tipo PREMIUM ou FREE e o candidato não tiver enviado o curriculum ainda, o site irá enviar por e-mail os dados do curriculum do candidato e gerar uma associação entre o usuário e a vaga apresentada.
+
+		2.3.2. Caso a vaga em questão seja do tipo PREMIUM ou FREE e o candidato já tiver enviado o curriculum, serão consideradas as seguintes regras de negócio
+
+			2.3.2.1. Caso a diferença entre a data do ultimo envio do curriculum for menor que 2 dias, o site irá mostrar a seguinte mensagem: "Curriculum foi enviado no dia DD/MM/YYYY e está em processo de análise. Um novo envio de curriculum será permitido a partir do dia DD/MM/YYYY"
+
+			2.3.2.2. Caso a quantidade de envio de curriculum tenha atingido a quantidade de 3X, o site irá mostrar a seguinte mensagem "Quantidade máxima de 3 envios já foi atingida. Por favor, aguarde retorno da empresa contratante."
+
+		2.3.3. Caso a empresa esteja como bloqueada e houver tentativa de envio de curriculum, o site irá apresentar a seguinte mensagem "A empresa dona desta vaga consta na sua lista de bloqueio de pesquisa de perfil. Deseja enviar o seu curriculum para esta vaga?" Caso positivo, seguirá as mesmas regras de negócio do item 2.3.2.
+
+
+
+3. Caso o usuário seja do tipo PREMIUM e o curriculum já tiver sido enviado para a vaga, será apresentado um ícone indicando que o curriculum já foi enviado e a quantidade de vezes que houve o envio.
+
+4. Caso o usuário seja do tipo PREMIUM e o curriculum dele já tiver sido verificado para aquela vaga, será apresentado um ícone indicando que o curriculum do candidato foi lido para aquela vaga.
+
+5. Caso o usuário seja do tipo PREMIUM e já tenha vista aquela vaga, será apresentado um ícone indicando que aquela vaga já foi visualizada anteriormente.
+
+
+Requisitos
+=========================================================================
+
+Usuários FREE poderão concorrer somente a vagas FREE
+
+Usuários PREMIUM poderão concorrer a vagas FREE e PREMIUM
+
+Usuários FREE poderão concorrer a vagas PREMIUM, desde que contratem um plano PREMIUM e sejam promovidos para usuário PREMIUM.
+
+Empresas PREMIUM poderão bloquear acesso a vagas de usuários FREE ou PREMIUM, exibindo a mensagem "Esta vaga não está mais disponível para participação em processo seletivo. Aguarde novas oportunidades." caso haja tentativa de concorrer a uma vaga.
+
+Usuários PREMIUM poderão bloquear empresas para pesquisa de perfil, porém ao tentar concorrer a uma vaga, o site irá apresentar a mensagem "A empresa dona desta vaga consta na sua lista de bloqueio de pesquisa de perfil. Deseja enviar o seu curriculum para esta vaga?"
+
+Usuários PREMIUM ao acessar determinada vaga (via tela de pesquisa, e-mail ou página de detalhes da vaga), terão os seguintes ícones: VAGA JÁ VISUALIZADA, CURRICULUM ENVIADO (X) VEZES PARA ESTA VAGA e CURRICULUM VISUALIZADO PELA EMPRESA
+
+Usuários PREMIUM poderão visualizar na página de detalhes da vaga a relação Candidato/Vaga existente no site para a vaga em questão.
+
+Um curriculum poderá ser enviado somente 3 vezes para uma mesma vaga
+
+Um curriculum somente poderá ser reenviado após 2 dias do último envio.

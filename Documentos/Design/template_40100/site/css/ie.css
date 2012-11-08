@@ -1,0 +1,8 @@
+*+html{overflow:auto;}
+ .pagination, .item-2, .box span, .box, .button {behavior:url(js/PIE.htc); position:relative;}
+#toTop  {behavior:url(js/PIE.htc);}
+
+
+.box span {bottom:-47px; left:-5px}
+
+

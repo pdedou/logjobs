@@ -1,0 +1,58 @@
+************************************************************************
+CDU001 - Pesquisar vagas
+************************************************************************
+
+Atores
+========================================================================
+usuário não cadastrado, usuário cadastrado LogJobs FREE, usuário cadastrado LogJobs VIP
+
+
+Pré-condições
+========================================================================
+Acesso a tela de filtros de pesquisa de vagas do LogJobs.
+
+
+Pós-condições
+========================================================================
+Apresentar uma lista de vagas ativas no LogJobs de acordo com o critério de pesquisa informado.
+
+
+Variações Tecnológicas
+========================================================================
+O modulo de pesquisa poderá ser realizado via internet, aplicativo desktop, gadget de sistema operacional e site de internet mobile.
+
+
+Questões em aberto
+========================================================================
+O filtro poderá apresentar resultados em auto-complete de acordo com a digitação?
+Caso a pesquisa não encontre resultados de acordo com o critério, poderá sugerir resultados aproximados?
+
+
+Fluxo Principal
+========================================================================
+
+1. O usuário acessa o site do LogJobs e informa no campo texto relacionado a pesquisa de vagas a palavra-chave ou o código da vaga pesquisada.
+
+2. Após preencher o campo, o usuário irá clicar no botão "Pesquisar"
+
+	2.1. Caso o usuário não tenha informado nenhum valor no campo de pesquisa, o sistema apresentará a mensagem de erro "Informe uma palavra-chave ou o código da vaga para efetuar uma pesquisa.".
+
+3. O sistema irá pesquisar na base de dados do LogJobs por anúncios de vagas ativas que atendam ao critério de pesquisa informado.
+
+4. O sistema irá retornar as vagas ativas encontradas de acordo com o critério de pesquisa
+
+	4.1. Caso o sistema não encontre vagas para o critério de pesquisa informado, o sistema irá apresentar a mensagem de erro "Não há vagas disponíveis no LogJobs para o critério de pesquisa informado." Retornar para o item 1.	
+
+5. Caso haja retorno de pesquisa, os dados serão apresentados de acordo com o Caso de Uso "CDU002 - Lista de Vagas Disponíveis"
+
+
+Requisitos
+=========================================================================
+
+O sistema deverá permitir a pesquisa de anúncios de vagas ativas no sistema de acordo com os seguintes critérios de pesquisa: palavras-chave e código da vaga. Caso seja utilizada a palavra-chave, o sistema irá retornar todas as vagas ativas que contenham as palavras-chave no seu titulo, descrição, cidade, estado, pais e cargo da vaga. Caso seja utilizado o código da vaga, o site irá fazer uma busca direta pelo código da vaga em questão.
+
+A pesquisa poderá ser realizada por usuário anônimos, FREE e VIPs.
+
+O site irá validar se houve valor informado no campo de pesquisa, obrigando a um preenchimento antes de efetivar a realização da pesquisa.
+
+O retorno de dados será tratado pelo caso de uso "CDU002 - Lista de Vagas Disponíveis"

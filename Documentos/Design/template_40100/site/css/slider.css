@@ -1,0 +1,58 @@
+* {
+	padding:0;
+	margin:0;
+}
+.slider-block {
+	left: 50%;
+    margin-left: -840px;
+    position: relative;
+    width: 1680px;
+    z-index: 1;
+	height:642px
+	}
+.slider {
+	height: 495px;
+    position: relative;
+    width: 1680px;
+    z-index: 1;
+	overflow:visible !important;
+}
+.items {
+	display:none;
+}
+.pagination { z-index:2; position:relative;height:66px; box-shadow:0 -3px 13px 0px #c2c0c0}
+.pagination li {display:block; width:317px; height:66px;float:left;background:url(../images/pag-bg.png) repeat-x left top #a5a29f;}
+.pagination li.current a{cursor:default}
+.pagination li a {display:block; height:58px; font-family: 'Lora', serif;  font-weight:700; font-size:25px; color:#FFF; text-transform:uppercase; padding:20px 0 0 25px; position:relative}
+.pagination li a:after{content: ""; position:absolute; right:0; top:0;background:url(../images/separator.png) no-repeat right top;
+	height:66px; width:1px}
+.pagination li.last {width:316px;}
+.pagination li.last a:after {background:none}
+.pagination li:hover, .pagination li.current {background:url(../images/pag-bg-h.png) repeat-x left top;}
+.pagination li:hover a, .pagination li.current a {background:url(../images/top-item.png) no-repeat 24px 66px;}
+
+
+.banner {
+	position:absolute;
+	bottom:-147px !important;
+	top:auto !important;
+	left:365px;
+	width:950px;
+	height:147px;
+	
+	}
+
+.slider-block .hr {margin-top:146px}
+
+
+
+
+
+
+
+
+
+
+
+
+
