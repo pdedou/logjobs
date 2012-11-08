@@ -1,0 +1,6 @@
+List of Fonts used in template 
+
+Lora		http://www.google.com/webfonts/family?family=Lora&subset=latin#download
+Playball		http://www.google.com/webfonts/specimen/Playball
+Open Sans	http://www.google.com/webfonts/specimen/Open+Sans
+Poly		http://www.google.com/webfonts/specimen/Poly

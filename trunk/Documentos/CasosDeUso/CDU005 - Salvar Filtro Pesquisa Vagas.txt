@@ -1,0 +1,66 @@
+************************************************************************
+CDU005 - Salvar Filtro Pesquisa Vagas
+************************************************************************
+
+Atores
+========================================================================
+Usuário cadastrado LogJobs PREMIUM
+
+
+Pré-condições
+========================================================================
+Acesso ao site LogJobs.
+Usuário autenticado como PREMIUM
+Pesquisa por palavra-chave realizada
+Filtro de refinamento aplicado para a palavra-chave em questão
+
+
+Pós-condições
+========================================================================
+Criação de um filtro de pesquisa vinculado a palavra-chave e ao refinamento escolhido
+
+
+Variações Tecnológicas
+========================================================================
+
+
+
+Questões em aberto
+========================================================================
+
+
+Fluxo Principal
+========================================================================
+
+1. Será apresentado ao usuário PREMIUM, após filtro de pesquisa por palavra-chave e refinamento, o botão SALVAR FILTRO DE PESQUISA
+
+2. Ao clicar no botão SALVAR FILTRO DE PESQUISA, será aplicada as seguintes regras de negócio
+
+	2.1. Caso não exista nenhum filtro de pesquisa salvo anteriormente para esta palavra-chave, será apresentada uma caixa de texto no qual o usuário terá que informar obrigatoriamente um alias para o filtro de pesquisa.
+
+	2.2. Caso já existe filtro de pesquisa salvo anteriormente para esta palavra-chave, será apresentada uma caixa de seleção com os alias de filtros de pesquisa para caso o usuário deseje sobrepor a pesquisa salva anteriormente ou uma opção "novo", que irá habilitar a caixa de cadastro de um novo nome de alias para a pesquisa em questão.
+
+3. Ao salvar o filtro de pesquisa, o mesmo ficará disponível nas seguintes situações:
+
+	3.1. No painel de controle do usuário PREMIUM, permitindo a busca rápida de vagas
+
+	3.2. No momento em que for efetuada uma busca por palavra-chave e já houver filtros vinculados a esta palavra-chave, dando a opção de refinamento automático.
+
+	3.3. Na opção de recebimento de e-mails de vagas, que além do e-mail normal (do contrato de prestação de serviço), irá receber e-mail específico somente com oportunidades relacionadas aos filtros de pesquisa salvo pelo usuário.
+
+
+
+Requisitos
+=========================================================================
+
+Somente usuários PREMIUM poderão salvar ou atualizar filtros de pesquisa de vagas
+
+Todo filtro de pesquisa terá um aliás e será vinculado a uma palavra-chave de pesquisa
+
+Um usuário PREMIUM poderá salvar até 50 filtros de pesquisa de vagas
+
+A atualização de um filtro de pesquisa será sempre a partir de um refinamento de pesquisa
+
+A exclusão de filtros de pesquisa será realizada apenas pelo painel de controle do usuário PREMIUM
+
+O usuário PREMIUM poderá escolher receber e-mails a partir dos filtros de pesquisa salvos, logo todo e-mail conterá somente resultados relacionados as pesquisas existentes e somente serão enviados caso haja pelo menos 1 resultado.

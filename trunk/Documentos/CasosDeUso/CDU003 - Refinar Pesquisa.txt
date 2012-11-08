@@ -1,0 +1,86 @@
+************************************************************************
+CDU003 - Refinar Pesquisa
+************************************************************************
+
+Atores
+========================================================================
+usuário não cadastrado, usuário cadastrado LogJobs FREE, usuário cadastrado LogJobs VIP
+
+
+Pré-condições
+========================================================================
+Acesso ao site LogJobs.
+Existência de dados de acordo com o critério de pesquisa informado.
+Lista de dados retornados pela pesquisa
+
+
+Pós-condições
+========================================================================
+Apresentar uma lista de filtros que poderão ser aplicados no refinamento de uma pesquisa realizada anteriormente
+
+
+Variações Tecnológicas
+========================================================================
+Os filtros de pesquisa poderão sofrer mudanças de quantidade e forma de apresentação mediante o meio de visualização (internet / mobile)
+
+
+Questões em aberto
+========================================================================
+Para o usuário PREMIUM será dada a possibilidade de salvar os filtros de pesquisa?
+Caso positivo, em qual momento será dada a oportunidade de aplicar o filtro novamente? No painel de controle do usuário?
+
+
+
+Fluxo Principal
+========================================================================
+
+1. O usuário visualiza a lista de vagas disponíveis de acordo com o critério de pesquisa informado no "CDU001 - Pesquisar Vagas"
+
+2. O sistema apresenta os seguintes filtros de refinamento de pesquisa, com a quantidade de registros existentes ao lado de cada critério.
+
+	2.1. Tipos de  vagas (Livres e Exclusivas) - escolha única
+
+	2.2. Data (Hoje, Últimos 2 dias, Últimos 3 dias, Última Semana, Último Mês e Acima de 1 Mês) - escolha única
+
+	2.3. Estado (Lista de Estados que atendem ao critério de pesquisa, por ordem alfabética) - múltipla escolha
+
+	2.4. Cidade (Lista de Cidades que atendem ao critério de pesquisa, por ordem alfabética) - múltipla escolha
+
+	2.5. Cargos (Lista de Cargos que atendem ao critério de pesquisa, por ordem alfabética) - múltipla escolha
+
+	2.6. Faixa Salarial (A combinar, Até R$1.000,00, R$ 1000,00 à R$ 2000,00,R$ 2001,00 à R$ 3000,00,R$ 3001,00 à R$ 4000,00, R$ 4001,00 à R$ 5000,00, R$ 5001,00 à R$ 7000,00, R$ 7001,00 à R$ 10.000,00 e Acima de R$ 10.000,00) - escolha única
+
+3. O usuário poderá selecionar qualquer um dos filtros para refinar a sua pesquisa
+
+	3.1. Caso o usuário selecione um filtro de multipla escolha, o sistema irá habilitar o botão "Filtrar" para aquele filtro. O filtro será somente aplicado caso o usuário clique no botão "Filtrar" relacionado ao critério escolhido.
+
+	3.2. Caso o usuário selecione um filtro de escolha única, o sistema irá automaticamente aplicar o filtro, retornando a quantidade de registros existentes para o critério escolhido.
+
+4. Ao aplicar o filtro, o site irá apresentar a quantidade de resultados em uma lista de dados paginada no mesmo modelo definido pelo "CDU002 - Lista de Vagas Disponíveis".
+
+5. Após aplicar os filtros de refinamento, o site irá apresentar novamente a possibilidade de refinamento sob os critérios anteriores
+
+6. Os filtros que foram aplicados ficarão visiveis e organizados por categoria acima dos filtros de refinamento apresentados no item 5
+
+	6.1. O usuário terá a possibilidade de excluir um filtro apresentado anteriormente. Ao excluir o filtro, o site irá efetuar a pesquisa considerando a palavra-chave e os filtros de refinamento ainda existentes.
+
+	6.2. Caso o usuário esteja autenticado como usuário PREMIUM, o site irá apresentar um botão denominado "SALVAR PESQUISA", que irá disparar o caso de uso "CDU005 - Salvar Filtro Pesquisa Vagas".
+
+
+
+Requisitos
+=========================================================================
+
+Os critérios de refinamento serão sempre com base na palavra-chave utilizada para pesquisa
+
+Após a aplicação de um critério de refinamento, os novos critérios de refinamento serão com base na combinação da palavra-chave com os critérios aplicados anteriormente, garantindo que pelo menos sempre um resultado válido seja retornado.
+
+O candidato do tipo PREMIUM poderá salvar os critério de filtro informado (PALAVRA-CHAVE + REFINAMENTOS), através do "CDU005 - Salvar Filtro Pesquisa Vagas"
+
+Caso o usuário seja do tipo PREMIUM e esteja tentando utilizar um filtro salvo anteriormente que não possua mais registros, ou por algum motivo a pesquisa não retorne mais dados, será apresentado a seguinte mensagem "Não há mais registros de vagas para o critério de pesquisa utilizados
+
+Critério XPTO
+
+".
+
+Para o refinamento, serão utilizados os mesmos requisitos de restrição utilizados no "CDU002 - Lista de Vagas Disponíveis"

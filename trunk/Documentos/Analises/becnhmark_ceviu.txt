@@ -1,0 +1,92 @@
+===================================================
+Ceviu - Especializado em TI
+===================================================
+Cadastro de Empresa
+
+Dados de Contato (Nome, Sobrenome e Email)
+Dados Cadastrais (Nome fantasia, razão social, páis de origem e CNPJ)
+Endereço (CEP, Endereço, Número, Complemento, Bairro, Estado, Cidade, Telefone)
+Dados de Acesso (Usuário, Senha)
+Dados Adicionais (Código promocional, Como tomou conhecimento)
+opt-in -> receber por e-mail o resumo informativo
+Aceite de contrato
+
+Cadastro de Vaga
+
+Dados da Vaga (Titulo, Cargo, Descrição)
+Local de Trabalho (País, Estado, Cidade, Número de Vagas)
+Opt-in receber avisos de recebimento de currículo no e-mail
+Opt-in receber aviso a cada mudança de status na vaga
+Informações adicionais (Salário Mensal ou Faixa Salarial)
+Disponibilidade para viagens
+Potador de deficiência
+
+Cadastro de Curriculo
+
+Dados Pessoais (nome, sobrenome, nascimento, pais de origem, email, cpf, sexo, estado, cidade, estado civil, possui filhos)
+Codigo promocional / Como tomou conhecimento do site
+Usuário, Senha
+Receber aviso do CEVIU
+Aceite do contrato
+Endereço (cep, endereço, complemento, bairro, cep, estado, cidade)
+Contato (Telefone residencial, recado, comercial, celular, fax)
+Portador de deficiência (auditiva, fisica, visual, multipla, mental, outros)
+Objetivo profissional
+Minicurriculo
+Disponibilidade trabalho temporário?
+
+Formação Academica (Grau, Instituição, Curso, Data inicio, data conclusão)
+Experiencia Profissional (Empresa, cargo, Data de Entrada, Data de Saida, Funções)
+Áreas e cargos pretendidos
+Idiomas
+Certificações
+Habilidades
+
+
+===================================================
+Caracteristica do serviço (G - Gratuito / P - Pago)
+===================================================
+
+Profissionais (57,70 mes / 99,90 trimestre (3) / 158,01 semestre (6) / 261,11 anual (12))
+
+* Cadastro Curriculo (G)
+* Concorrer a vagas livres (G)
+* Aviso de vagas no perfil (G)
+* Mini-url (G)
+* Concorrer a todas as vagas (P)
+* Curriculo em destaque (P)
+* Ver nome dos anunciantes das vagas (P)
+* Saber quais empresas leram o seu curriculum (P)
+* Historico de envio de curriculum (P)
+* Bloqueio de empresa (P)
+* Curriculum em ingles (P)
+
+Empresas - Vagas
+
+* Visualizar curriculos recebidos no site (G)
+* Vaga disponivel para 100% dos profissionais (P)
+* Aprovaçao imediata da vaga (P)
+* Receber indicações de curriculos por e-mail (P)
+* Visualizar curriculos recebidos no e-mail (P)
+* Mais de 1 cidade por vaga (P)
+* Destaque na pesquisa de vagas (P)
+* Tempo de disponibilidade de curriculos para a empresa ((G) - 60 dias  (P) - 180 dias)
+* Confidencialidade opcional da empresa (P)
+* Tempo de vida da vaga ((G) - 60 dias  (P) - 180 dias)
+* Tabela Salarial (P)
+* Questionário de Seleção (P)
+* Envio de e-mail exclusivo com a vaga (P)
+* Escolher perfil profissional que irá receber a vaga (P)
+* E-mail com logo, branding e site da empresa (P)
+
+Empresa - Pesquisas (R$ 330,00 mes | 3X R$276 trimestral (R$ 828,00) | 6 R$ 257,00 (R$ 1542,00)  semestre | 10 X R$ 240,00 ano (R$ 2400,00))
+
+* Pesquisa por estado, cidade, cargo, formação, idade e ultima atualização de curriculo (G)
+* Pesquisa por nome, empresa que já trabalhou, email, curriculos PNE (P)
+* Enviar mensagem direta ao profissional (P)
+* Fazer anotações no curriculo (P)
+* Download do curriculo anexo (P)
+
+
+
+

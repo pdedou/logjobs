@@ -1,0 +1,28 @@
+===================================================
+Na Labuta
+===================================================
+
+* Painel de vagas - R$ 24,99 / Pro R$ 25,00
+Dados da Vaga
+
+Dados Cadastrais (E-mail, nome da empresa, site, logotipo)
+Dados da vaga (Titulo, descrição, E-mail de contato para os candidatos)
+Categoria (Design, programação, publicidade)
+Tipo (Emprego, freela, estágio)
+Cidade, Estado
+
+
+===================================================
+InfoJobs
+===================================================
+
+Categoria de Habilitação (A|B|C|D|E)
+Veiculo Proprio (Caminhão, carro, moto, outro)
+Disponibilidade viagem?
+Disponibilidade mudar residencia?
+Tipo de Jornada (Noturno, integral, manhã, tarde)
+Tipo de contrato (autonomo, cooperado, CLT, PJ, estágio, temporário, trainee)
+Nivel hierárquico (estagiário, operacional, auxiliar, assistente, trainee, analista, encarregado, supervisor, consultor, especialista, gerente, diretor)
+
+
+

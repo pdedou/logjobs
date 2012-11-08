@@ -1,0 +1,90 @@
+************************************************************************
+CDU020 - Cadastrar Usuário
+************************************************************************
+
+Atores
+========================================================================
+usuário não cadastrado
+
+
+Pré-condições
+========================================================================
+Acesso redirecionado a partir de botões de "Cadastre-se" nas diversas seções do site
+Acesso redirecionado a partir do botão "Concorrer Vaga", tanto FREE quanto PREMIUM
+
+
+Pós-condições
+========================================================================
+Realizar o cadastro dos dados básicos de contato do usuário no banco de dados
+Realizar o cadastro do usuário com status de INCOMPLETO
+Redirecionamento para a tela de cadastro de curriculum
+
+
+Variações Tecnológicas
+========================================================================
+O modulo de cadastro poderá ser realizado através de diferentes plataformas (web, desktop, mobile, API)
+
+
+Questões em aberto
+========================================================================
+Integração de cadastro com Facebook?
+Integração de cadastro com LinkedIn?
+Fornecimento de API SoA de cadastro para parcerias B2B?
+
+
+Fluxo Principal
+========================================================================
+
+1. O usuário é redirecionado para uma tela contendo o formulário de cadastro de usuários, a partir dos diversos botões "Cadastre-se" no site ou a partir de um fluxo de concorrência de vagas (pelo site ou por e-mail)
+
+2. O site irá apresentar um formulários com os seguintes campos: Nome, sobrenome, data de nascimento, País de origem, E-mail, Confirmação de E-mail, CPF, Sexo, Estado, Cidade, Código Promocional, Como conheceu o LogJobs, Usuário, Senha e Confirmação de Senha, Opt-in de recebimento de e-mails do LogJobs e parceiros e Termo de aceite de contrato de prestação de serviço. Serão aplicadas as seguintes regras de negócio:
+
+	2.1. O termo de aceite do contrato de prestação de serviço será uma flag no site ("Eu li e aceito os termos deste contrato"), no qual haverá um link para a pessoa visualizar o contrato.
+
+	2.2. Os campos obrigatórios são: Nome, sobrenome, data de nascimento, país de origem, e-mail, cpf, sexo, estado, cidade, usuário e senha.
+
+	2.3. O sistema não permitirá mais de 1 cadastro com o mesmo número de CPF. Caso o cadastro já exista, a seguinte mensagem "Já existe um usuário cadastrado com este número de CPF. Caso você seja o dono deste documento e desconheça o cadastro no nosso site, clique aqui para entrar em contato conosco." Na mensagem será apresentado uma página contendo procedimentos para o usuário confirmar a fraude.
+
+	2.4. O sistema não permitirá mais de 1 cadastro com o mesmo endereço de e-mail. Caso o usuário tente efetuar o cadastro com um e-mail já existente, o site irá apresentar a seguinte mensagem "Já existe um cadastro com o e-mail XXX. Clique em OK caso deseje recuperar a senha de acesso para este e-mail. Ou clique em CANCELAR, caso deseje efetuar o cadastro com outro e-mail".
+
+		2.4.1. Caso clique em OK, acionar o "CDU012 - Recuperar Senha Acesso"
+
+		2.4.2. Caso clique em CANCELAR, manter os dados do formulário, limpar os campos de e-mail e colocar foco no campo "E-mail"
+
+	2.5. O sistema não permitirá mais de 1 cadastro com o mesmo usuário. Caso seja informado um usuário já existente, exibir a mensagem "Já existe um usuário cadastrado com o login XXX. Por favor, informe outro."
+
+3. Ao efetuar a 1ª parte do cadastro, será apresentado ao usuário a opção de seguir o LogJobs no Twiter e curtir a Fan-Page do LogJobs no Facebook.
+
+4. Após completar a 1ª parte do cadastro, será apresentado o formulário de cadastro de currículum. Gerenciado pelo "CDU021 - Cadastrar Curriculum"
+
+5. Apos completar a 1ª parte, o site irá enviar um e-mail com as seguintes informações para o usuário
+
+"
+Bem-vindo USUÁRIO
+
+Seus dados de acesso ao LogJobs são:
+
+      Login: LOGIN
+      Senha: SENHA
+      LOGJOBID: 00001
+
+Acesse agora sua conta e aproveite tudo que o LOGJOB oferece à sua carreira.
+
+Você agora faz parte do o maior site de empregos em logística do Brasil. No LOGJOB, você terá acesso às melhores e mais modernas ferramentas na busca de oportunidades de trabalho. São milhares de vagas, uma tabela de pretensão salarial atualizada diariamente e serviços como Avaliação de Currículo que podem fazer a diferença no concorrido mercado de logística.
+
+Seja bem-vindo e obrigado por fazer parte do LogJobs. 
+"
+
+Requisitos
+=========================================================================
+
+
+Não pode haver 2 usuários com o mesmo CPF
+
+Não pode haver 2 usuários com o mesmo E-mail
+
+Não pode haver 2 usuários com o mesmo Login
+
+Para efetivação do cadastro, o usuário deverá aceitar o Termo de Prestação de Serviço
+
+Ao efetuar a 1ª parte, o cadastro de usuário será marcado como INCOMPLETO.
